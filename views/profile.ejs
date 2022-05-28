@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+</head>
+<body>
+    Profile page of <%= profile_user.name %> <br>
+<%= profile_user.age %> <br>
+<%= profile_user.sex %> <br>
+<%= profile_user.role %> <br>
+
+<% if(role=='Admin'){%>
+    <form action="/profile/ReviewToBeGiven" method="POST">
+    <% for(user of users){%>
+        <input type="checkbox" name="ReviewToBeGiven" value="<%= user._id%>" ><%= user.name %>
+        
+        <% }%>
+        <input type="hidden" name="profile_user" value="<%= profile_user %>">
+        <input type="submit" name="submit" value="submit" class="checkboxValue">;
+        
+    </form>
+    <% } %>
+    
+    
+    
+</body>
+
+    
+    
+    </html>

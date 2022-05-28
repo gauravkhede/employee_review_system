@@ -1,1 +1,21 @@
-<h1>Views is working</h1>
+<a href="/logout">LogOut</a> <br> <br>
+<% if(role=="Admin"){%>
+    <form action="user-signUp/create" method="POST">
+        Enter Email: <input type="text" name="email"> <br>
+        Enter password: <input type="text" name="password"> <br>
+        Enter passsword again <input type="text" name="confirm_password"> <br>
+        Enter name: <input type="text" name="name"> <br>
+        Enter age: <input type="text" name="age"> <br>
+        Enter Gender: <input type="text" name="sex"> <br>
+        <input type="submit" name="submit" value="submit"> <br>
+    
+    </form>
+    <% } %>
+  
+   <% for(user of users){ %>
+     <a href="/profile/<%= user._id%>"><%= user.name %></a> <br>
+    <% } %>
+    <% for(reviewPending of main_user.reviewPending){ %>
+        Pending Review: <%= reviewPending %> <br> <br>
+        <% } %>
+    

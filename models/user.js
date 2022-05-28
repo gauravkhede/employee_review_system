@@ -30,7 +30,7 @@ const userSchema=new mongoose.Schema({
         type:[String],
     },
     reviewGot:{
-        type:mongoose.Schema.Types.ObjectId,
+        type:[mongoose.Schema.Types.ObjectId],
         ref:'Review'
     }
 },{
