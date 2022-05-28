@@ -21,5 +21,6 @@ router.post('/user-signUp/create',usersController.create);
 router.get('/profile/:id',usersController.profile);
 router.post('/profile/:ReviewToBeGiven',usersController.reviewToBeGiven);
 router.get('/logout',usersController.destroySession);
-router.get('/reviewPage',usersController.reviewPage);
+router.get('/reviewPage/:reviewPending',usersController.reviewPage);
+router.post('/reviewCreate',usersController.reviewCreate);
 module.exports=router;

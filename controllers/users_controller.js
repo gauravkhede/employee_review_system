@@ -1,6 +1,7 @@
 const User=require('../models/user');
 const fs=require('fs');
 const path=require('path');
+const Review = require('../models/review');
 
 
 module.exports.signIn=function(req,res){
@@ -76,6 +77,25 @@ module.exports.destroySession= function(req,res){
     // return res.redirect('/user-signin');
 }
 //to create review
-module.exports.reviewPage=function(req,res){
-    return res.render('review');
+module.exports.reviewPage=async function(req,res){
+    let reviewPending=await User.findById(req.params.reviewPending).populate('reviewPending');
+    return res.render('review',{
+        reviewPending:reviewPending
+    });
+}
+module.exports.reviewCreate=async function(req,res){
+        // console.log(req.body.pendingReviewedPerson+" is the requested Body");
+        Review.create({
+            cooperation:req.body.cooperation,
+            punctual:req.body.punctual,
+            work:req.body.work,
+            creativity:req.body.creativity,
+            adaptability:req.body.adaptability,
+            description:req.body.description
+        },async function(err,newReview){
+            if(err){ console.log('error in creating a review',err); return; }
+            await User.updateOne( { "_id" : req.body.pendingReviewedPerson },{ $push: { "reviewGot": newReview } });
+            return res.redirect('/');
+        });
+
 }

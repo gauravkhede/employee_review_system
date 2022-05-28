@@ -3,6 +3,7 @@
 
 </head>
 <body>
+     Fill Review for <%=reviewPending.name %>
     <form action="/reviewCreate" method="POST">
         Rate on Basis of Cooperation: <input type="radio" id="" name="cooperation" value="1">
         <label for="cooperation">1</label>
@@ -54,7 +55,8 @@
         <label for="adaptability">4</label>
         <input type="radio" id="" name="adaptability" value="5">
         <label for="adaptability">5</label> <br>
-        Description about Employee: <textarea cols="25" rows="3"></textarea> <br>
+        Description about Employee: <textarea cols="25" rows="3" name="description"></textarea> <br>
+        <input type="hidden" name="pendingReviewedPerson" value="<%=reviewPending._id%>">
         <input type="submit" value="submit">
 
     </form>

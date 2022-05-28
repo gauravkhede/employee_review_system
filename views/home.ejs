@@ -16,6 +16,16 @@
      <a href="/profile/<%= user._id%>"><%= user.name %></a> <br>
     <% } %>
     <% for(reviewPending of main_user.reviewPending){ %>
-        Pending Review: <a href="/reviewPage"><%= reviewPending.name %></a> <br> <br>
+        Pending Review: <a href="/reviewPage/<%=reviewPending.id%>"><%= reviewPending.name %></a> <br> <br>
+        <% } %>
+    <% for(reviewGot of main_user.reviewGot){%>
+        Cooperation: <%= reviewGot.cooperation %>
+        Punctual: <%= reviewGot.punctual %>
+        Work: <%= reviewGot.work %>
+        Creativity: <%= reviewGot.creativity %>
+        adaptability: <%= reviewGot.adaptability %> <br>
+        <% if(reviewGot.description!=""){%>
+        Description: <%= reviewGot.description %> <br> 
+            <% }%>
         <% } %>
     
