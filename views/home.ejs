@@ -16,6 +16,6 @@
      <a href="/profile/<%= user._id%>"><%= user.name %></a> <br>
     <% } %>
     <% for(reviewPending of main_user.reviewPending){ %>
-        Pending Review: <%= reviewPending %> <br> <br>
+        Pending Review: <a href="/reviewPage"><%= reviewPending.name %></a> <br> <br>
         <% } %>
     

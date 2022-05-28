@@ -58,6 +58,8 @@ module.exports.profile=async function(req,res){
 module.exports.reviewToBeGiven=async function(req,res){
     console.log(req.body.ReviewToBeGiven," is reviewToBeGiven");
     console.log(req.body.profile_user);
+    let reviewedUser=await User.findById(req.body.profile_user);
+    console.log(reviewedUser.name+" is reviewed user");
     for(user of req.body.ReviewToBeGiven){
         let addField=await User.findById(user);
         await User.updateOne( { "_id" : user },{ $push: { "reviewPending": req.body.profile_user } });
@@ -72,4 +74,8 @@ module.exports.destroySession= function(req,res){
        return res.redirect('/user-signin');
       });
     // return res.redirect('/user-signin');
+}
+//to create review
+module.exports.reviewPage=function(req,res){
+    return res.render('review');
 }

@@ -27,10 +27,11 @@ const userSchema=new mongoose.Schema({
         enum:['Employee','Admin']
     },
     reviewPending:{
-        type:[String],
+        type:[mongoose.Types.ObjectId],
+        ref:'User'
     },
     reviewGot:{
-        type:[mongoose.Schema.Types.ObjectId],
+        type:[mongoose.Types.ObjectId],
         ref:'Review'
     }
 },{

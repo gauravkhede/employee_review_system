@@ -1,8 +1,8 @@
 const User = require("../models/user");
 
-module.exports.home=function(req,res){
+module.exports.home=async function(req,res){
     let role=res.locals.user.role;
-    let main_user=res.locals.user;
+    let main_user=await User.findById(res.locals.user).populate('reviewPending');
     console.log(role," is user");
     User.find({},function(err,users){
         if(err){ console.log('Error in finding all users',err); return; }
