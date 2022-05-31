@@ -33,7 +33,11 @@ const userSchema=new mongoose.Schema({
     reviewGot:{
         type:[mongoose.Types.ObjectId],
         ref:'Review'
-    }
+    },
+    allReview:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Review'
+    }]
 },{
     timestamps:true
 });

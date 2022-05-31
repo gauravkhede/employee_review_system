@@ -24,6 +24,10 @@ const reviewSchema=new mongoose.Schema({
     description:{
         type:String,
 
+    },
+    author:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User'
     }
 },{
     timestamps:true

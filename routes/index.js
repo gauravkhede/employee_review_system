@@ -23,4 +23,6 @@ router.post('/profile/:ReviewToBeGiven',usersController.reviewToBeGiven);
 router.get('/logout',usersController.destroySession);
 router.get('/reviewPage/:reviewPending',usersController.reviewPage);
 router.post('/reviewCreate',usersController.reviewCreate);
+router.post('/profileUpdate',usersController.updateProfile);
+router.get('/removeUser/:user',usersController.removeUser);
 module.exports=router;

@@ -3,6 +3,7 @@
 
 </head>
 <body>
+        <%console.log(locals.user.name+" is logged in ")%>
      Fill Review for <%=reviewPending.name %>
     <form action="/reviewCreate" method="POST">
         Rate on Basis of Cooperation: <input type="radio" id="" name="cooperation" value="1">
@@ -57,6 +58,7 @@
         <label for="adaptability">5</label> <br>
         Description about Employee: <textarea cols="25" rows="3" name="description"></textarea> <br>
         <input type="hidden" name="pendingReviewedPerson" value="<%=reviewPending._id%>">
+        <input type="hidden" name="author" value="<%=locals.user._id%>">
         <input type="submit" value="submit">
 
     </form>

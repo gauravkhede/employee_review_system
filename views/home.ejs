@@ -10,10 +10,12 @@
         <input type="submit" name="submit" value="submit"> <br>
     
     </form>
-    <% } %>
-  
+    
+   
    <% for(user of users){ %>
      <a href="/profile/<%= user._id%>"><%= user.name %></a> <br>
+     <a href="/removeUser/<%= user._id%>">delete</a>
+    <% } %>
     <% } %>
     <% for(reviewPending of main_user.reviewPending){ %>
         Pending Review: <a href="/reviewPage/<%=reviewPending.id%>"><%= reviewPending.name %></a> <br> <br>
@@ -28,4 +30,5 @@
         Description: <%= reviewGot.description %> <br> 
             <% }%>
         <% } %>
+    
     
