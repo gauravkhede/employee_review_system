@@ -25,4 +25,5 @@ router.get('/reviewPage/:reviewPending',usersController.reviewPage);
 router.post('/reviewCreate',usersController.reviewCreate);
 router.post('/profileUpdate',usersController.updateProfile);
 router.get('/removeUser/:user',usersController.removeUser);
+router.post('/updateRole',usersController.updateRole);
 module.exports=router;

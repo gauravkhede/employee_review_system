@@ -197,6 +197,14 @@ module.exports.removeUser=async function(req,res){
         userToBeDelete.remove();
         return res.redirect('back');
 }
-module.exports.updateReview=async function(req,res){
-    
+module.exports.updateRole=async function(req,res){
+    let profile_user=await User.findById(req.body.profile_user);
+    const updateDocumentRole={
+        $set:{
+            role:req.body.role
+        }
+    };
+    await User.updateOne({_id:profile_user},updateDocumentRole);
+    return res.redirect('back');
+
 }

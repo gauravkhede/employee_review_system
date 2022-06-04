@@ -32,7 +32,7 @@ body{
  .center{
      /* text-align: center; */
      position:relative;
-     top:7rem;
+     /* top:7rem; */
      margin-left:25%;
  }
  /* .profileUserInfo:hover .center{
@@ -167,4 +167,9 @@ body{
 }
 .h2{
     font-size: 1.2rem;
+}
+.changeRole{
+    /* border:1px solid black; */
+    margin-top:6rem;
+     margin-left:25%;
 }

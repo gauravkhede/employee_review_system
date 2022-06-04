@@ -6,10 +6,19 @@
 </head>
 <body>
     <div class="profileUserInfo">
+    <div class="changeRole">
+    <form action="/updateRole" method="POST">
+        <span class="labelsHeading paddingLeftClass">Upgrade to Admin:</span> 
+        <input type="hidden" name="profile_user" value="<%=profile_user._id%>">
+        <input type="hidden" name="role" value="Admin">
+        <input type="submit" value="Upgrade" ><br>
+    </form>
+    </div> <br>
     <span class="center"><span class="labelsHeading paddingLeftClass">Profile page of </span><%= profile_user.name %></span> <br> <br>
     <span class="center"><span class="labelsHeading paddingLeftClass">Age: </span><%= profile_user.age %></span> <br> <br>
     <span class="center"><span class="labelsHeading paddingLeftClass">Gender: </span><%= profile_user.sex %> </span><br> <br>
-    <span class="center"><span class="labelsHeading paddingLeftClass">Role:</span><%= profile_user.role %></span> <br> <br>
+    <span class="center"><span class="labelsHeading paddingLeftClass">Role:</span><%= profile_user.role %></span> <br>
+    
     </div>
 <div>
 <div class="ReviewToBeGiven">
