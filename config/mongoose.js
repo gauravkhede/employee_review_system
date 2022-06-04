@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
-
-mongoose.connect('mongodb://localhost/employee_review_system');
+//gaurav
+//0HRej0lZoyyKPP9w
+mongoose.connect('mongodb+srv://gaurav:0HRej0lZoyyKPP9w@cluster0.bwb5s.mongodb.net/employee-review-system?retryWrites=true');
 const db=mongoose.connection;
 db.on('error',console.error.bind(console,'error connecting to db'));
 db.once('open',function(){
