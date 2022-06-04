@@ -15,3 +15,6 @@ module.exports.home=async function(req,res){
     })
     
 }
+module.exports.signIn=function(req,res){
+    return res.redirect('/user-signin');
+}

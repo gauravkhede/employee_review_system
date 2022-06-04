@@ -6,7 +6,7 @@ const Review = require('../models/review');
 
 module.exports.signIn=function(req,res){
     if(req.isAuthenticated()){
-        return res.redirect('/');
+        return res.redirect('/home');
     }
     res.render('signIn',{
         title:'users | sign in',
@@ -42,7 +42,7 @@ module.exports.create=function(req,res){
 //sign in and create session for user
 module.exports.createSession=function(req,res){
     // console.log('create session called');
-    return res.redirect('/');
+    return res.redirect('/home');
 }
 module.exports.profile=async function(req,res){
     let user=await User.findById(req.params.id).populate({
@@ -67,7 +67,7 @@ module.exports.reviewToBeGiven=async function(req,res){
     console.log(typeof req.body.ReviewToBeGiven," is the type of review to be given");
     if(typeof req.body.ReviewToBeGiven=="string"){
         await User.updateOne( { "_id" : req.body.ReviewToBeGiven },{ $push: { "reviewPending": req.body.profile_user } });
-        return res.redirect('/');
+        return res.redirect('/home');
     }
     console.log(req.body.profile_user);
     console.log(req.body.reviewToBeGiven," is review to be given");
@@ -154,7 +154,7 @@ module.exports.reviewCreate=async function(req,res){
             authorObject.allReview.push(newReview);
             await User.findByIdAndUpdate(authorObject._id, { $pull: { reviewPending:req.body.pendingReviewedPerson }});
             authorObject.save();
-            return res.redirect('/');
+            return res.redirect('/home');
         });
 
 }
@@ -184,7 +184,7 @@ module.exports.updateProfile=async function(req,res){
         await User.updateOne({_id:user},updateDocumentEmail);
         await User.updateOne({_id:user},updateDocumentAge);
         await User.updateOne({_id:user},updateDocumentSex);
-        return res.redirect('/');
+        return res.redirect('/home');
 }
 module.exports.removeUser=async function(req,res){
         let userToBeDelete=await User.findById(req.params.user).populate('allReview');

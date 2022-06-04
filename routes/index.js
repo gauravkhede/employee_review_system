@@ -5,8 +5,9 @@ const homeController=require('../controllers/home_controller');
 const usersController=require('../controllers/users_controller');
 const passport=require('passport');
 
+router.get('/',homeController.signIn);
+router.get('/home',homeController.home);
 
-router.get('/',homeController.home);
 // router.post('/create-session',passport.authenticate(
 //     'local',
 //     {failureRedirect:'/user-signout'},
