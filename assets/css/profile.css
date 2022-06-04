@@ -1,0 +1,170 @@
+body{
+    background-color: #ecf6ac;
+    display:flex;
+    flex-direction: column;
+    
+}
+/* span elements styling  */
+.labelsHeading{
+    font-weight:700;
+}
+.paddingLeftClass{
+    padding-left: 2%;
+}
+ /* profile_user information styling  */
+ /* .profileUserInfo{
+     display:block;
+     margin-top:0px;
+    
+ } */
+ .profileUserInfo{
+     background-color: #ecf6ac;
+     color:black;
+     display: block;
+     margin-top:0px;
+     width:20rem;
+     height:20rem;
+     border-radius: 50%;
+     box-shadow:0px 0px 25px 4px goldenrod;
+     margin-left:40%;
+     
+ }
+ .center{
+     /* text-align: center; */
+     position:relative;
+     top:7rem;
+     margin-left:25%;
+ }
+ /* .profileUserInfo:hover .center{
+    top:7rem;
+    margin-left:25%;
+ } */
+ .reviewGotContainer{
+    display:inline-block;
+    width:60%;
+    top: 1.2rem;
+    /* border:1px solid cyan; */
+    
+}
+.reviewsGot{
+    margin-top: 1.3rem;
+    width:100%;
+    border:1px dashed lightgray;
+}
+.reviewsGot:hover{
+    box-shadow:0px 0px 25px 4px black;
+}
+.HeadingContainer{
+    width:100%;
+    height:4rem;
+    background-color: black;
+    color:white;
+    font-weight: 700;
+    margin-top:3rem;
+}
+.HeadingContainer .iconify{
+    display:inline-block;
+    margin-left: 40%;
+}
+.HeadingContainer h3{
+    display:inline-block;
+    color:white;
+    padding-bottom: 2rem;
+}
+.leftmargin7{
+    margin-left:5%;
+}
+/* update info styling  */
+.formContainer{
+    display:inline-block;
+    width:50%;
+    /* margin-left:30%; */
+    /* border:1px solid orange; */
+}
+.updateProfileHeading{
+    margin-left:10.5rem;
+}
+.updateProfileHeading h3{
+    display:inline-block;
+}
+.updateProfileHeading .iconify{
+    display:inline-block;
+}
+.divisionContainer{
+    display:inline-block;
+    width:100%;
+    /* border:1px solid yellow; */
+    /* position: relative; */
+}
+.createEmployee{
+    display: inline-block;
+    position: relative;
+    width:70%;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    margin-left:2.5rem;
+    padding-top:0.5rem;
+    padding-left:0.4rem;
+    
+}
+.createEmployee:hover{
+    box-shadow:0px 0px 25px 4px black;
+    font-size:1.2rem;
+}
+/* submit button class  */
+.submitButton{
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 45px;
+    width: 5.5rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
+.submitButton:hover{
+    transform: translateY(-7px);
+    background-color: #2EE59D;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+#submitButtonUpdate{
+    margin-left:8rem;
+}
+/* align input fields  */
+#updateformName{
+    margin-left:0.4rem;
+}
+#updateformEmail{
+    margin-left:0.3rem;
+}
+#updateformAge{
+    margin-left:1.2rem;
+}
+#updateformSex{
+    margin-left:1.4rem;
+}
+.updateFormAndReviewGotContainer{
+    display:flex;
+   
+
+}
+.marginLeft20{
+    margin-top:3rem;
+    margin-left: 20%;
+}
+.ReviewToBeGiven{
+    margin-top:2rem;
+    margin-left:37%;
+    margin-bottom:1rem;
+}
+.updateReviewClass{
+    
+    max-width: 32rem;
+    box-shadow:0px 0px 25px 4px black;
+    margin-top: 2rem;;
+    margin-left: 30%;
+    margin-bottom: 2rem;
+}
+.h2{
+    font-size: 1.2rem;
+}

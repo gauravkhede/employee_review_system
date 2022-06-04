@@ -1,10 +1,22 @@
+<!-- adding link for styling file  -->
+<link rel="stylesheet" href="/css/signUp.css">
+
+<div id="signout_container">
+<h1 id="heading">
+    Sign Up
+</h1>
+<div class="form_container">
+    <!-- creating form for signUp  -->
 <form action="user-signUp/create" method="POST">
-    Enter Email: <input type="text" name="email">
-    Enter password: <input type="text" name="password">
-    Enter passsword again <input type="text" name="confirm_password">
-    Enter name: <input type="text" name="name">
-    Enter age: <input type="text" name="age">
-    Enter Gender: <input type="text" name="sex">
-    <input type="submit" name="submit" value="submit">
+    <input type="text" name="name" id="signupForm_name" id="signupForm_name" placeholder="Enter Name Here">
+    <input type="text" name="email" id="signupForm_email" placeholder=" Enter Email"> <br>
+    <input type="password" name="password" id="signupForm_password" placeholder="Enter Password"> <br>
+    <input type="password" name="confirm_password" id="signupForm_confirm_password" placeholder="Re-Enter your password"> <br>
+    <input type="text" name="age" id="signupForm_age" placeholder="Enter you age"> <br>
+    <input type="text" name="sex" id="signupForm_sex" placeholder="Enter Gender"> <br>
+    <input type="checkbox" id="signupForm_terms" value="true"> I hereby accept all terms and conditions of Employee Review System <br>
+    <input type="submit" name="submit" value="submit" id="signupForm_submit">
 
 </form>
+</div>
+</div>

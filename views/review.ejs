@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <head>
-
+        <link rel="stylesheet" href="/css/home.css">
+        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
-<body>
+<body class="reviewPageBackground">
         <%console.log(locals.user.name+" is logged in ")%>
-     Fill Review for <%=reviewPending.name %>
-    <form action="/reviewCreate" method="POST">
-        Rate on Basis of Cooperation: <input type="radio" id="" name="cooperation" value="1">
+   <div class="formContainer">     
+   <div class="createProjectHeading modifyTop modifyLeft60"><span class="iconify" data-icon="ic:outline-preview" style="font-size: 24px;"></span>&nbsp; <h3>Fill Review for <%=reviewPending.name %></h3></div>
+   <div class="DivisionContainer modifyLeft modifyWidth">
+   <div class="createEmployee"> 
+        <form action="/reviewCreate" method="POST">
+        <span class="center"><span class="labelsHeading paddingLeftClass">Rate on Basis of Cooperation:</span> <input type="radio" id="" name="cooperation" value="1">
         <label for="cooperation">1</label>
         <input type="radio" id="" name="cooperation" value="2">
         <label for="cooperation">2</label>
@@ -15,8 +19,8 @@
         <input type="radio" id="" name="cooperation" value="4">
         <label for="cooperation">4</label>
         <input type="radio" id="" name="cooperation" value="5">
-        <label for="cooperation">5</label> <br>
-        Rate on Basis of Punctual: <input type="radio" id="" name="punctual" value="1">
+        <label for="cooperation">5</label> <br> <br>
+        <span class="center"><span class="labelsHeading paddingLeftClass">Rate on Basis of Punctual:</span> <input type="radio" id="" name="punctual" value="1">
         <label for="punctual">1</label>
         <input type="radio" id="" name="punctual" value="2">
         <label for="punctual">2</label>
@@ -25,8 +29,8 @@
         <input type="radio" id="" name="punctual" value="4">
         <label for="punctual">4</label>
         <input type="radio" id="" name="punctual" value="5">
-        <label for="punctual">5</label> <br>
-        Rate on Basis of work: <input type="radio" id="" name="work" value="1">
+        <label for="punctual">5</label> <br> <br>
+        <span class="center"><span class="labelsHeading paddingLeftClass">Rate on Basis of work:</span> <input type="radio" id="" name="work" value="1">
         <label for="work">1</label>
         <input type="radio" id="" name="work" value="2">
         <label for="work">2</label>
@@ -35,8 +39,8 @@
         <input type="radio" id="" name="work" value="4">
         <label for="work">4</label>
         <input type="radio" id="" name="work" value="5">
-        <label for="work">5</label> <br>
-        Rate on Basis of creativity: <input type="radio" id="" name="creativity" value="1">
+        <label for="work">5</label> <br> <br>
+        <span class="center"><span class="labelsHeading paddingLeftClass">Rate on Basis of creativity:</span> <input type="radio" id="" name="creativity" value="1">
         <label for="creativity">1</label>
         <input type="radio" id="" name="creativity" value="2">
         <label for="creativity">2</label>
@@ -45,8 +49,8 @@
         <input type="radio" id="" name="creativity" value="4">
         <label for="creativity">4</label>
         <input type="radio" id="" name="creativity" value="5">
-        <label for="creativity">5</label> <br>
-        Rate on Basis of adaptability: <input type="radio" id="" name="adaptability" value="1">
+        <label for="creativity">5</label> <br> <br>
+        <span class="center"><span class="labelsHeading paddingLeftClass">Rate on Basis of adaptability:</span> <input type="radio" id="" name="adaptability" value="1">
         <label for="adaptability">1</label>
         <input type="radio" id="" name="adaptability" value="2">
         <label for="adaptability">2</label>
@@ -55,12 +59,15 @@
         <input type="radio" id="" name="adaptability" value="4">
         <label for="adaptability">4</label>
         <input type="radio" id="" name="adaptability" value="5">
-        <label for="adaptability">5</label> <br>
-        Description about Employee: <textarea cols="25" rows="3" name="description"></textarea> <br>
+        <label for="adaptability">5</label> <br> <br>
+        <span class="center"><span class="labelsHeading paddingLeftClass">Description about Employee:</span> <textarea cols="25" rows="3" name="description"></textarea> <br>
         <input type="hidden" name="pendingReviewedPerson" value="<%=reviewPending._id%>">
         <input type="hidden" name="author" value="<%=locals.user._id%>">
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" id="signupForm_submitButton" class="submitButton modifyButton">
 
-    </form>
+        </form>
+   </div>
+   </div>
+   </div>
 </body>
 </html>

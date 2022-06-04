@@ -1,34 +1,64 @@
+<link rel="stylesheet" href="/css/home.css">
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <a href="/logout">LogOut</a> <br> <br>
+<div class="mainContainer">
 <% if(role=="Admin"){%>
+    <div class="formContainer">
+    <div class="createProjectHeading"><span class="iconify" data-icon="wpf:create-new" style="font-size: 25px;"></span><h3>  Create New Employee</h3></div>
+    <div class="DivisionContainer">
+    <div class="createEmployee">
     <form action="user-signUp/create" method="POST">
-        Enter Email: <input type="text" name="email"> <br>
-        Enter password: <input type="text" name="password"> <br>
-        Enter passsword again <input type="text" name="confirm_password"> <br>
-        Enter name: <input type="text" name="name"> <br>
-        Enter age: <input type="text" name="age"> <br>
-        Enter Gender: <input type="text" name="sex"> <br>
-        <input type="submit" name="submit" value="submit"> <br>
+        <span class="labelsHeading paddingLeftClass">Enter Email:</span> <input type="text" name="email" id="signupForm_email"> <br> <br>
+        <span class="labelsHeading paddingLeftClass">Enter password:</span> <input type="password" name="password" id="signupForm_password"> <br> <br>
+        <span class="labelsHeading paddingLeftClass">Enter passsword again</span> <input type="password" name="confirm_password" id="signupForm_confirm_password"> <br> <br>
+        <span class="labelsHeading paddingLeftClass">Enter name: </span><input type="text" name="name" id="signupForm_name"> <br> <br>
+        <span class="labelsHeading paddingLeftClass">Enter age:</span> <input type="text" name="age" id="signupForm_age">  <br> <br>
+        <span class="labelsHeading paddingLeftClass">Enter Gender:</span> <input type="text" name="sex" id="signupForm_gender"><br> <br>
+        <input type="submit" name="submit" value="submit" id="signupForm_submitButton" class="submitButton"> <br>
     
     </form>
+    </div>
+    </div>
+    </div>
     
-   
+    
+    <div class="employeeList">
+    <div class="createProjectHeading" id="employeeListHeading"><span class="iconify" data-icon="bi:list-check" style="font-size: 25px;"></span> &nbsp;<h3>Employee List</h3></div>
    <% for(user of users){ %>
-     <a href="/profile/<%= user._id%>"><%= user.name %></a> <br>
-     <a href="/removeUser/<%= user._id%>">delete</a>
+    <div id="employeeDocument">
+     <div id="employeeName"><a href="/profile/<%= user._id%>" class="no-text-decoration"><span class="labelsHeading paddingLeftClass " ><%= user.name %></span></a> </div> &nbsp;
+     <div id="deleteEmployeeButton"><a href="/removeUser/<%= user._id%>"><span class="iconify" data-icon="bi:trash"></span></a></div> </div><br> <br>
     <% } %>
+    </div>
     <% } %>
+    
+    
+    </div> 
+    <!-- end of the main container  -->
+    <div class="pendingAndGotReviewContainer">
+    <div class="reviewPendingContainer">
+    <div class="HeadingContainer"><span class="iconify" data-icon="ant-design:ordered-list-outlined" style="font-size: 25px;"></span> &nbsp;<h3>Review Employee List</h3></div> 
     <% for(reviewPending of main_user.reviewPending){ %>
-        Pending Review: <a href="/reviewPage/<%=reviewPending.id%>"><%= reviewPending.name %></a> <br> <br>
+        <div class="reviewsPending">
+        <span class="labelsHeading paddingLeftClass">Pending Review: <a href="/reviewPage/<%=reviewPending.id%>" class="anchortag active"><%= reviewPending.name %></a></span> <br> <br>
+        </div>
         <% } %>
+    </div>
+    <div class="reviewGotContainer">
+        <div class="HeadingContainer leftmargin7"><span class="iconify" data-icon="bi:list-check" style="font-size: 25px;"></span> &nbsp;<h3>All Reviews Got</h3></div>
     <% for(reviewGot of main_user.reviewGot){%>
-        Cooperation: <%= reviewGot.cooperation %>
-        Punctual: <%= reviewGot.punctual %>
-        Work: <%= reviewGot.work %>
-        Creativity: <%= reviewGot.creativity %>
-        adaptability: <%= reviewGot.adaptability %> <br>
+        <div class="reviewsGot leftmargin7">
+        <span class="labelsHeading paddingLeftClass">Cooperation:</span> <%= reviewGot.cooperation %>
+        <span class="labelsHeading paddingLeftClass">Punctual:</span> <%= reviewGot.punctual %>
+        <span class="labelsHeading paddingLeftClass">Work:</span> <%= reviewGot.work %>
+        <span class="labelsHeading paddingLeftClass">Creativity:</span> <%= reviewGot.creativity %>
+        <span class="labelsHeading paddingLeftClass">adaptability:</span> <%= reviewGot.adaptability %> <br>
         <% if(reviewGot.description!=""){%>
-        Description: <%= reviewGot.description %> <br> 
+            <br><span class="labelsHeading paddingLeftClass">Description:</span> <%= reviewGot.description %> <br> 
             <% }%>
+        </div>
         <% } %>
+    </div>
+    </div>
     
     

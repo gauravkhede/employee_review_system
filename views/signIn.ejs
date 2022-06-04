@@ -1,5 +1,13 @@
+<!-- adding styling file to signIn page  -->
+<link rel="stylesheet" href="/css/signIn.css">
+<h1 id="signIn_heading">
+    User Sign In
+</h1>
+<div class="signIn_container">
+<!-- Form to signIn -->
 <form action="/user-signin/create-session" method="POST">
-    Enter your email <input type="text" name="email">
-    Enter your password <input type="text" name="password">
-    <input type="submit" name="submit" value="submit">
+    <div id="email_container"><input type="text" name="email" placeholder="Enter your Email Here"></div>
+    <div id="password_container"><input type="password" name="password" placeholder="Enter Your Password here"></div>
+    <input type="submit" name="submit" value="submit" id="submit_button">
 </form>
+</div>

@@ -1,0 +1,199 @@
+.mainContainer{
+    /* display:flex; */
+    position:relative;
+    display:inline-block;
+    width:100%;
+    /* border:1px solid pink;   */
+}
+.formContainer{
+    display:inline-block;
+    width:50%;
+    /* border:1px solid black; */
+}
+.divisionContainer{
+    display:inline-block;
+    width:100%;
+    /* border:1px solid yellow; */
+    /* position: relative; */
+}
+/* signupForm container styling  */
+.createEmployee{
+    display: inline-block;
+    position: relative;
+    width:70%;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    margin-left:2.5rem;
+    padding-top:0.5rem;
+    padding-left:0.4rem;
+    
+}
+.createEmployee:hover{
+    box-shadow:0px 0px 25px 4px black;
+    font-size:1.2rem;
+}
+.employeeList{
+    /* display:flex; */
+    padding-top:1rem;
+    padding-left: 17rem;
+    width:30%;
+    /* height:inherit; */
+    /* border:1px solid black; */
+    /* border:1px solid green; */
+    display: inline-block;
+}
+.no-text-decoration:link{
+    text-decoration: none;
+}
+.no-text-decoration:visited{
+    text-decoration: none;;
+}
+.employeeList .iconify:hover{
+    color:red;
+    font-size:24px;
+}
+.createProjectHeading{
+    margin-left:10.5rem;
+}
+.createProjectHeading h3{
+    display:inline-block;
+}
+.createProjectHeading .iconify{
+    display:inline-block;
+}
+.labelsHeading{
+    font-weight:700;
+}
+.paddingLeftClass{
+    padding-left: 2%;
+}
+/* align input margins */
+#signupForm_email{
+    margin-left:5rem;
+}
+#signupForm_password{
+    margin-left:3.4rem;
+}
+#signupForm_confirm_password{
+    margin-left:0.8rem;
+}
+#signupForm_name{
+    margin-left:5.1rem;
+}
+#signupForm_age{
+    margin-left:5.8rem;
+}
+#signupForm_gender{
+    margin-left:4.1rem;
+}
+#signupForm_submitButton{
+    margin-left:9.8rem;
+}
+/* submit button class  */
+.submitButton{
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 45px;
+    width: 5.5rem;
+    height: 2rem;
+    margin-left: 1rem;
+}
+.submitButton:hover{
+    transform: translateY(-7px);
+    background-color: #2EE59D;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+ /* Big container containing review pending divisions and review Got divisions  */
+
+.pendingAndGotReviewContainer{
+    display:flex;
+}
+/* Employee name in employee list  */
+#employeeName{
+    font-weight:700;
+    display:inline-block;
+}
+#employeeDocument{
+    width:max-content;
+}
+#employeeDocument:hover{
+    box-shadow:0px 0px 25px 4px black;
+}
+#deleteEmployeeButton{
+    display:inline-block;
+}
+#employeeListHeading{
+    margin-left:2rem;
+    margin-bottom:1rem;
+}
+/* review Got section  */
+.reviewGotContainer{
+    display:inline-block;
+    width:40%;
+    
+}
+.HeadingContainer{
+    width:100%;
+    height:4rem;
+    background-color: black;
+    color:white;
+    font-weight: 700;
+    
+}
+.HeadingContainer .iconify{
+    display:inline-block;
+    margin-left: 40%;
+}
+.HeadingContainer h3{
+    display:inline-block;
+    color:white;
+    padding-bottom: 2rem;
+}
+.reviewsGot{
+    margin-top: 1.3rem;
+    border:1px dashed lightgray;
+}
+.reviewsGot:hover{
+    box-shadow:0px 0px 25px 4px black;
+}
+.anchortag{
+    text-decoration: none;
+}
+.active:hover{
+    color:#2EE59D;
+    font-size:1.2rem;
+}
+.reviewsPending{
+    margin-top: 1.3rem;
+    border:1px dashed lightgray;
+}
+.reviewPendingContainer{
+    margin-left:1rem;
+    display:inline-block;
+    width:40%;
+    
+}
+.leftmargin7{
+    margin-left:7rem;
+}
+
+.modifyButton{
+    margin-top:1.5rem;
+}
+.modifyLeft{
+    margin-left:55%;
+}
+.modifyLeft60{
+    margin-left: 65%;
+}
+.modifyTop{
+    margin-top:15%;
+}
+.modifyWidth{
+    width:100%;
+}
+.reviewPageBackground{
+    background-color: #ecf6ac;
+}

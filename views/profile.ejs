@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <head>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link rel="stylesheet" href="/css/profile.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
 </head>
 <body>
-    Profile page of <%= profile_user.name %> <br>
-<%= profile_user.age %> <br>
-<%= profile_user.sex %> <br>
-<%= profile_user.role %> <br>
-
+    <div class="profileUserInfo">
+    <span class="center"><span class="labelsHeading paddingLeftClass">Profile page of </span><%= profile_user.name %></span> <br> <br>
+    <span class="center"><span class="labelsHeading paddingLeftClass">Age: </span><%= profile_user.age %></span> <br> <br>
+    <span class="center"><span class="labelsHeading paddingLeftClass">Gender: </span><%= profile_user.sex %> </span><br> <br>
+    <span class="center"><span class="labelsHeading paddingLeftClass">Role:</span><%= profile_user.role %></span> <br> <br>
+    </div>
+<div>
+<div class="ReviewToBeGiven">
 <% if(role=='Admin'){%>
     <form action="/profile/ReviewToBeGiven" method="POST">
     <% for(user of users){%>
@@ -18,37 +23,52 @@
         <input type="submit" name="submit" value="submit" class="checkboxValue">;
         
     </form>
-    
+</div>
+    <div class="updateFormAndReviewGotContainer">
+     <div class="reviewGotContainer">
+        <div class="HeadingContainer leftmargin7"><span class="iconify" data-icon="bi:list-check" style="font-size: 25px;"></span> &nbsp;<h3>All Reviews Got</h3></div>
     <% for(reviewGot of profile_user.reviewGot){%>
+        <div class="reviewsGot leftmargin7">
         <% if(role=='Admin'){%>
-        Review By: <strong><%=reviewGot.author.name %> </strong>
+        <span class="labelsHeading paddingLeftClass">Review By:</span> <strong><%=reviewGot.author.name %> </strong> 
             <% } %>
-        Cooperation: <%= reviewGot.cooperation %>
-        Punctual: <%= reviewGot.punctual %>
-        Work: <%= reviewGot.work %>
-        Creativity: <%= reviewGot.creativity %>
-        adaptability: <%= reviewGot.adaptability %> <br>
+        <span class="labelsHeading paddingLeftClass">Cooperation: </span> <%= reviewGot.cooperation %> 
+        <span class="labelsHeading paddingLeftClass">Punctual: </span> <%= reviewGot.punctual %> 
+        <span class="labelsHeading paddingLeftClass">Work: </span> <%= reviewGot.work %> 
+        <span class="labelsHeading paddingLeftClass">Creativity:</span> <%= reviewGot.creativity %> 
+        <span class="labelsHeading paddingLeftClass">adaptability:</span> <%= reviewGot.adaptability %> <br>
         <% if(reviewGot.description!=""){%>
-        Description: <%= reviewGot.description %> <br> 
+        <span class="labelsHeading paddingLeftClass">Description: </span><%= reviewGot.description %> <br> 
             <% }%>
-        
+        </div>
         <% } %>
-    <% } %>
-    <% if(role=='Admin'){%>
-        Update Review: <a href="/reviewPage/<%= profile_user.id%>"><%=profile_user.name%></a> 
+     </div>
+    <% } %> <br>
+    <div class="formContainer marginLeft20">
+        <div class="updateProfileHeading"><span class="iconify" data-icon="wpf:create-new" style="font-size: 25px;"></span><h3>  Update Employee</h3></div>
+        <% if(role=='Admin'){%>
+        <div class="DivisionContainer">
+        <div class="createEmployee">
+        <form action="/profileUpdate" method="POST">
+            <span class="labelsHeading paddingLeftClass">Update name: </span><input type="text" name="name" value="<%=profile_user.name%>" id="updateformName"> <br> <br>
+            <span class="labelsHeading paddingLeftClass">Update Email: </span><input type="text" name="email" value="<%=profile_user.email%>" id="updateformEmail"> <br> <br>
+            <span class="labelsHeading paddingLeftClass">Update Age: </span><input type="text" name="age" value="<%=profile_user.age%>" id="updateformAge"> <br> <br>
+            <span class="labelsHeading paddingLeftClass">Update Sex: </span> <input type="text" name="sex" value="<%=profile_user.sex%>" id="updateformSex"> <br> <br>
+            <input type="hidden" name="profile_user" value="<%= profile_user._id %>">
+            <input type="submit" value="submit" class="submitButton" id="submitButtonUpdate">
+        </form>
+        </div>
+        </div>
         <% } %>
-    Add Review : <a href="/reviewPage/<%=profile_user.id%>"><%=profile_user.name%></a>
+    </div>
+    </div>
+    <div class="updateReviewClass">
     <% if(role=='Admin'){%>
-    <form action="/profileUpdate" method="POST">
-        Update name: <input type="text" name="name" value="<%=profile_user.name%>">
-        Update Email: <input type="text" name="email" value="<%=profile_user.email%>">
-        Update Age: <input type="text" name="age" value="<%=profile_user.age%>">
-        Update Sex: <input type="text" name="sex" value="<%=profile_user.sex%>">
-        <input type="hidden" name="profile_user" value="<%= profile_user._id %>">
-        <input type="submit" value="submit">
-    </form>
-    <% } %>
-    
+        <span class="labelsHeading paddingLeftClass h2">Update Review: </span><a href="/reviewPage/<%= profile_user.id%>"><%=profile_user.name%></a> 
+        <% } %>
+        <span class="labelsHeading paddingLeftClass h2">Add Review :</span> <a href="/reviewPage/<%=profile_user.id%>"><%=profile_user.name%></a>
+    </div>
+    </div>
     
 </body>
 
