@@ -23,7 +23,7 @@ app.use(session({
     cookie:{
         maxAge:(1000*60*100)
     },
-    store:MongoStore.create({mongoUrl:'mongodb://localhost/employee_review_system'}),function(err){
+    store:MongoStore.create({mongoUrl:'mongodb+srv://gaurav:0HRej0lZoyyKPP9w@cluster0.bwb5s.mongodb.net/employee-review-system?retryWrites=true'}),function(err){
         console.log(err || 'connect mongodb setup ok');
     }
 }));
