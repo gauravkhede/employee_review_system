@@ -35,7 +35,7 @@ app.use(express.urlencoded());
 app.use(express.static('assets'));
 app.use('/',require('./routes'));
 
-app.listen(port,function(err){
+app.listen(process.env.PORT || port,function(err){
     if(err){ console.log(err); return; }
     console.log('app is up and running on port 8000');
 })
